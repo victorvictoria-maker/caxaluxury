@@ -2603,6 +2603,7 @@ ol {
   .about__pic {
     padding-left: 0;
   }
+
   .about__pic__inner:after {
     left: 8px;
     top: 8px;
@@ -3160,6 +3161,7 @@ ol {
 }
 .gallery-area .single-gallery .content-image {
   width: 100%;
+  border-radius: 10px;
 }
 .gallery-area .single-gallery .content-details p {
   color: #fff;
