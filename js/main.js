@@ -26,6 +26,14 @@
     $(this).css("background-image", "url(" + bg + ")");
   });
 
+  /*------------------
+        Background Set
+    --------------------*/
+  $(".set-bg-home").each(function () {
+    var bg = $(this).data("setbg");
+    $(this).css("background-image", "url(" + bg + ")");
+  });
+
   //Canvas Menu
   $(".canvas__open").on("click", function () {
     $(".offcanvas-menu-wrapper").addClass("active");
