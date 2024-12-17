@@ -2617,7 +2617,8 @@ ol {
   .hero__slider.owl-carousel .owl-nav button.owl-next {
     right: 15px;
   }
-  .gallery-area h1 {
+  .gallery-area h1,
+  .gallery-area-project {
     font-size: 3em !important;
   }
 }
@@ -3073,33 +3074,51 @@ ol {
 }
 
 /* COPY */
-.gallery-area {
+.gallery-area,
+.gallery-area-project {
   margin-top: 50px;
 }
+.gallery-area .loadmore,
+.gallery-area-project .loadmore {
+  margin-bottom: 40px;
+}
 
-.gallery-area .single-gallery {
+.gallery-area .single-gallery,
+.gallery-area-project .single-gallery {
   margin-bottom: 30px;
 }
-.gallery-area h1 {
+.gallery-area h1,
+.gallery-area-project h1 {
   text-transform: uppercase;
   font-size: 2em;
   margin-bottom: 12px;
 }
-.gallery-area .single-gallery .content {
+.gallery-area .single-gallery .content,
+.gallery-area-project .single-gallery .content {
   position: relative;
   max-width: 100%;
   margin: auto;
   overflow: hidden;
 }
-.gallery-area .single-gallery .content .primary-btn {
+.gallery-area .single-gallery .content .primary-btn,
+.gallery-area-project .single-gallery .content .primary-btn {
   border-radius: 0px;
 }
+.gallery-area-project .row {
+  display: none; /* Initially hide all rows */
+}
+
+.gallery-area-project .row:nth-child(-n + 8) {
+  display: flex; /* Show the first two rows */
+}
 @media (max-width: 414px) {
-  .gallery-area .single-gallery .content .primary-btn {
+  .gallery-area .single-gallery .content .primary-btn,
+  .gallery-area-project .single-gallery .content .primary-btn {
     font-size: 10px;
   }
 }
-.gallery-area .single-gallery .content .content-overlay {
+.gallery-area .single-gallery .content .content-overlay,
+.gallery-area-project .single-gallery .content .content-overlay {
   background-color: #373642;
   position: absolute;
   left: 0;
@@ -3113,18 +3132,22 @@ ol {
   -moz-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
 }
-.gallery-area .single-gallery .content-overlay {
+.gallery-area .single-gallery .content-overlay,
+.gallery-area-project .single-gallery .content-overlay {
   margin: 20px;
 }
 @media (max-width: 414px) {
-  .gallery-area .single-gallery .content-overlay {
+  .gallery-area .single-gallery .content-overlay,
+  .gallery-area-project .single-gallery .content-overlay {
     margin: 0px;
   }
 }
-.gallery-area .single-gallery .content:hover .content-overlay {
+.gallery-area .single-gallery .content:hover .content-overlay,
+.gallery-area-project .single-gallery .content:hover .content-overlay {
   opacity: 0.8;
 }
-.gallery-area .single-gallery .content-details {
+.gallery-area .single-gallery .content-details,
+.gallery-area-project .single-gallery .content-details {
   position: absolute;
   text-align: center;
   padding-left: 1em;
@@ -3140,7 +3163,8 @@ ol {
   -moz-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
-.gallery-area .single-gallery .content-title {
+.gallery-area .single-gallery .content-title,
+.gallery-area-project .single-gallery .content-title {
   width: 60%;
   border-bottom: 1px solid #c6b069;
   font-size: 18px;
@@ -3149,24 +3173,29 @@ ol {
   padding: 20px 0px;
 }
 @media (max-width: 414px) {
-  .gallery-area .single-gallery .content-title {
+  .gallery-area .single-gallery .content-title,
+  .gallery-area-project .single-gallery .content-title {
     width: 92%;
     font-size: 15px;
   }
 }
-.gallery-area .single-gallery .content:hover .content-details {
+.gallery-area .single-gallery .content:hover .content-details,
+.gallery-area-project .single-gallery .content:hover .content-details {
   top: 50%;
   left: 50%;
   opacity: 1;
 }
-.gallery-area .single-gallery .content-image {
+.gallery-area .single-gallery .content-image,
+.gallery-area-project .single-gallery .content-image {
   width: 100%;
   border-radius: 10px;
 }
-.gallery-area .single-gallery .content-details p {
+.gallery-area .single-gallery .content-details p,
+.gallery-area-project .single-gallery .content-details p {
   color: #fff;
   font-size: 0.8em;
 }
-.gallery-area .single-gallery .fadeIn-bottom {
+.gallery-area .single-gallery .fadeIn-bottom,
+.gallery-area-project .single-gallery .fadeIn-bottom {
   top: 80%;
 }
