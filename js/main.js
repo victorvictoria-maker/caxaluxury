@@ -15,7 +15,7 @@
     --------------------*/
   $(window).on("load", function () {
     $(".loader").fadeOut();
-    $("#preloder").delay(50).fadeOut("slow");
+    $("#preloder").delay(20).fadeOut("slow");
   });
 
   /*------------------
@@ -23,7 +23,9 @@
     --------------------*/
   $(".set-bg").each(function () {
     var bg = $(this).data("setbg");
-    $(this).css("background-image", "url(" + bg + ")");
+    $(this)
+      .attr("loading", "lazy")
+      .css("background-image", "url(" + bg + ")");
   });
 
   /*------------------
@@ -31,7 +33,9 @@
     --------------------*/
   $(".set-bg-home").each(function () {
     var bg = $(this).data("setbg");
-    $(this).css("background-image", "url(" + bg + ")");
+    $(this)
+      .attr("loading", "lazy")
+      .css("background-image", "url(" + bg + ")");
   });
 
   //Canvas Menu
@@ -69,7 +73,7 @@
       ],
       animateOut: "fadeOut",
       animateIn: "fadeIn",
-      smartSpeed: 1500,
+      smartSpeed: 800,
       autoHeight: false,
       autoplay: true,
       mouseDrag: false,
