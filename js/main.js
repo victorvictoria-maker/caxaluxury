@@ -13,9 +13,43 @@
   /*------------------
         Preloader
     --------------------*/
-  $(window).on("load", function () {
-    $(".loader").fadeOut();
-    $("#preloder").fadeOut("slow");
+  // $(window).on("load", function () {
+  //   $(".loader").fadeOut();
+  //   $("#preloder").fadeOut("slow");
+  // });
+  $(document).ready(function () {
+    $(".loader").fadeOut(100);
+    $("#preloder").fadeOut(200);
+  });
+
+  // LAZYLOAD IMAGES
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img");
+
+    const lazyLoadFallback = (img) => {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+        img.removeAttribute("data-src");
+      }
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          lazyLoadFallback(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    images.forEach((img) => {
+      if (!img.hasAttribute("loading")) {
+        img.setAttribute("loading", "lazy");
+      }
+      if (img.dataset.src) {
+        observer.observe(img);
+      }
+    });
   });
 
   /*------------------
